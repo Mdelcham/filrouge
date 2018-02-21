@@ -1,0 +1,44 @@
+#one{
+	background: #7F2927;
+}
+
+#one p, #one h2{
+	color: white;
+}
+
+#three{
+	background: #CC423F;
+}
+
+#fourth{
+	background: #7F4E4D;
+}
+
+
+#r1, #r2, #r3, #r4, #r5, #r6, #r7, #r8, #r9, #r10{
+	display: none;
+	margin-bottom: 0;
+	color: white;
+}
+#myDropdown{
+	color: black;
+}
+
+#FAQ{
+	border: 5px solid white;
+}
+
+#fifth{
+	background: #CC413F;
+}
+
+#CONTACT input{
+	color: black;
+}
+
+@media screen and (max-width: 736px){
+	#three img{
+		width: 300px;
+		margin: 0;
+	}
+}
