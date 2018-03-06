@@ -100,32 +100,32 @@
 					<section id="two" class="wrapper alt style2">
 						<h2>Nos ateliers</h2>
 						<section class="spotlight">
-							<div class="image"><img src="assets/images/couture.jpeg" alt="couture" /></div><div class="content">
+							<div class="image"><img data-src="assets/images/couture.jpeg" alt="couture" /></div><div class="content">
 								<h3>Couture</h3>
 								<p>Trous, poches trouées, fermeture éclair, coutures défaites, boutons arrachés, ... sur vos vêtements, pulls, jeans, chemises, chaussures, ...</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="assets/images/computer.jpeg" alt="ordinateur" /></div><div class="content">
+							<div class="image"><img data-src="assets/images/computer.jpeg" alt="ordinateur" /></div><div class="content">
 								<h3>Informatique / Imprimante	</h3>
 								<p>Ordinateur portable, imprimante jet d'encre / laser / aiguille, ordinateur de bureau, ...</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="assets/images/radio.jpeg" alt="radio" /></div><div class="content">
+							<div class="image"><img data-src="assets/images/radio.jpeg" alt="radio" /></div><div class="content">
 								<h3>Electro / Electronique / Electricité</h3>
 								<p>Sèche-cheveux, rasoir, mixer, grille pain, four, gaufrier, jeux vidéos, pèse-personne, radio, réveil, téléphone, machine à café, senseo, magnétoscope, lecteur DVD, walkman, jouets électroniques, chaîne Hi-Fi, horloge, lampe, ... <br>
 								Attention, nous ne garantissons pas un accès aisé au local et donc la réparation d'objets trop encombrants (gros électro, ...)</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="assets/images/wood.jpeg" alt="bois" /></div><div class="content">
+							<div class="image"><img data-src="assets/images/wood.jpeg" alt="bois" /></div><div class="content">
 								<h3>Bois / Divers</h3>
 								<p>Chaises, jouets anciens, bibelots, bijoux, ...</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="assets/images/bike.jpeg" alt="vélo" /></div><div class="content">
+							<div class="image"><img data-src="assets/images/bike.jpeg" alt="vélo" /></div><div class="content">
 								<h3>Vélo-Mécanique</h3>
 								<p>Votre vélo bien sûr ! Nous avons un atelier partenaire où vous pourrez même acheter une éventuelle pièce de rechange à prix coûtant.	</p>
 							</div>
@@ -140,16 +140,16 @@
 							</header>
 							<ul class="features">
 								<li>
-								<img src="assets/images/repair1.jpeg" alt="photo d'atelier">
+								<img data-src="assets/images/repair1.jpeg" alt="photo d'atelier">
 								</li>
 								<li>
-								<img src="assets/images/repair2.jpeg" alt="photo d'atelier">
+								<img data-src="assets/images/repair2.jpeg" alt="photo d'atelier">
 								</li>
 								<li>
-								<img src="assets/images/repair3.jpeg" alt="photo d'atelier">
+								<img data-src="assets/images/repair3.jpeg" alt="photo d'atelier">
 								</li>
 								<li>
-								<img src="assets/images/repair4.jpeg" alt="photo d'atelier">
+								<img data-src="assets/images/repair4.jpeg" alt="photo d'atelier">
 								</li>
 							</ul>
 						</div>
@@ -232,6 +232,13 @@
 			<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 			<script>
+				[].forEach.call(document.querySelectorAll('img[data-src]'),    function(img) {
+				  img.setAttribute('src', img.getAttribute('data-src'));
+				  img.onload = function() {
+				    img.removeAttribute('data-src');
+				  };
+				});
+				
 			$('.FAQ').on('click', '.faq_item', function () 
 			{
 				$(this).children('.answer').toggle("blind", 500);
