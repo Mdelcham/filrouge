@@ -14,7 +14,9 @@
 	background: #7F4E4D;
 }
 
-
+.question{
+	cursor: pointer;
+}
 .answer{
 	display: none;
 	margin-bottom: 0;
